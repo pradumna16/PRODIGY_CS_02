@@ -1,0 +1,43 @@
+By Pradumna Pokley
+Documentation:
+
+
+step1: Generate Key Function:
+
+generate_key(seed, size): Generates a random permutation based on a seed and the size of the array.
+
+
+Step2: Encrypt Function:
+
+Opens the image and converts it to a numpy array.
+Flattens the array for easier manipulation.
+Generates a random key for shuffling pixels using the provided seed.
+Shuffles the pixel values based on the key.
+Applies an XOR operation with the seed for additional encryption.
+Reshapes the encrypted array back to the original image shape.
+Converts the encrypted array back to an image and returns it along with the key.
+
+
+Step3: Decrypt Function:
+
+Opens the encrypted image and converts it to a numpy array.
+Flattens the array.
+Reverses the XOR operation using the same seed.
+Uses the inverse of the key to unshuffle the pixel values.
+Reshapes the decrypted array back to the original image shape.
+Converts the decrypted array back to an image and returns it.
+
+
+Step4: Main Function:
+
+Prompts the user for their choice (Encrypt, Decrypt, or Quit).
+Based on the choice, it prompts for the image path and seed value.
+For encryption, it calls the encrypt function, saves the encrypted image and key.
+For decryption, it loads the key from the file, calls the decrypt function, and saves the decrypted image.
+
+
+->Usage
+Save the script as advanced_image_encryptor.py.
+Run the script with python advanced_image_encryptor.py.
+Follow the prompts to encrypt or decrypt images.
+This advanced tool uses pixel shuffling and XOR operations to provide more secure encryption and decryption of images. The key used for shuffling is saved to a file and used during decryption to restore the original image.
